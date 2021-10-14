@@ -13,11 +13,9 @@ function CreateCard(props) {
             <img 
                 src={props.src}
             />
-            <p>
-                Asset: {props.asset}
-            </p>
-            <p>
-                {props.type == "asset" ? "Supply: " : "QTY owned: "}{props.quantity}
+            <p className="asset-name">
+                <span>{props.asset}</span>
+                <span>{props.quantity}</span>
             </p>
         </span>
     )

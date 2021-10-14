@@ -44,7 +44,7 @@ function NavBar(props) {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="">Counterview.club</Navbar.Brand>
+                <Navbar.Brand href="" className="logo">Counterview.club</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">

@@ -8,7 +8,7 @@ import CreateCard from './components/CreateCard'
 // TODOD:
 // 1. Make function that shows list of all fake pepes
 // 2. Make search data pull from form submit
-// 3. Enter submits search not relaods page
+// 3. Enter submits search not reloads page
 
 function App() {
     // Global variables
