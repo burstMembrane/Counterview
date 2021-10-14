@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+/* CUSTOM */
+
+/* Search field rounding */
+.search-button {
+  border-top-left-radius: 0px!important;
+  border-bottom-left-radius: 0px!important;
+}
+
+.search-field {
+  border-top-right-radius: 0px!important;
+  border-bottom-right-radius: 0px!important;
+}
+
+/* Image card css */
+.image-card {
+  display: inline-block;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 8px;
+
+  background-color: #282c34;
+}
+
+.image-card p {
+  margin-top: 1em;
+
+  color: rgb(224,224,226);
+}
