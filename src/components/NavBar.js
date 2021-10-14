@@ -12,6 +12,10 @@ function NavBar(props) {
         setInput(input)
     }
 
+    function handleSubmit(e) {
+        e.preventDefault();
+    }
+
     // 2. Receives search input and filters length to determine if asset or address then fetches API data
     const search = async (value) => {
 
@@ -61,7 +65,12 @@ function NavBar(props) {
                         </NavDropdown.Item>
                     </NavDropdown> */}
                 </Nav>
-                <Form className="d-flex">
+                <Form 
+                    className="d-flex"
+                    onSubmit={(e) => {
+                        handleSubmit(e)
+                    }}
+                >
                 <FormControl
                     type="search"
                     placeholder="Search asset or address"
