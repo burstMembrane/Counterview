@@ -10,6 +10,10 @@
   color: rgb(48,209,88)!important;
 }
 
+.navBar {
+  background-color: rgb(28,28,30)!important;
+}
+
 /* Search field rounding */
 .search-button {
   border-top-left-radius: 0px!important;
@@ -38,7 +42,7 @@
   max-width: 95%;
 
   margin: 1em;
-  padding: 1em;
+  padding: 1em 1em 0.75em 1em;
   /* border-radius: 8px; */
   border: 1px solid rgb(52,199,89);
 
@@ -55,10 +59,11 @@
 
 .image-card p {
   display: flex;
-  margin: 0;
-  padding-top: 0.5em;
+  margin: 0.5em 0 0 0;
+  padding: 0.5em;
 
   justify-content: space-between;
 
-  color: rgb(28,28,30);
+  color: rgb(224,224,226);
+  background-color: rgb(28,28,30);
 }

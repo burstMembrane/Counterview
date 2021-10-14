@@ -42,21 +42,24 @@ function NavBar(props) {
     }, [searchType])
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect className="navBar" expand="lg"variant="dark">
             <Container>
                 <Navbar.Brand href="" className="logo">Counterview.club</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                    {/* <Nav.Link href="">About</Nav.Link> */}
-                    <NavDropdown title="Donate" id="collasible-nav-dropdown">
+                    <Nav.Link 
+                        href="https://fapep.github.io/FABRIQUE/counterview.html"
+                        target="_blank"
+                    >About</Nav.Link>
+                    {/* <NavDropdown title="Donate" id="collasible-nav-dropdown">
                     <NavDropdown.Item 
                         href=""
                         onClick={() => {navigator.clipboard.writeText("1EWFR9dMzM2JtrXeqwVCY1LW6KMZ1iRhJ5")}}
                     >
-                            <span className="text-wrap">Copy: 1EWFR9dMzM2JtrXeqwVCY1LW6KMZ1iRhJ5</span>
+                            <span className="text-wrap">Copy XCP Address</span>
                         </NavDropdown.Item>
-                    </NavDropdown>
+                    </NavDropdown> */}
                 </Nav>
                 <Form className="d-flex">
                 <FormControl

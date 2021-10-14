@@ -1,17 +1,5 @@
 [
     {
-        "asset": "PEPEHARING",
-        "src": "https://xchain.io/img/cards/PEPEHARING.png"
-    },
-    {
-        "asset": "PEPEHIRST",
-        "src": "https://fakeasf.club/assets/PEPEHIRST/PEPEHIRST.gif"
-    },
-    {
-        "asset": "PEPEPOLLOCK",
-        "src": "https://xchain.io/img/cards/PEPEPOLLOCK.png"
-    },
-    {
         "asset": "BLOOMER",
         "src": "https://s3.us-west-1.amazonaws.com/fakeasf.club/assets/BLOOMER/BLOOMER.gif"
     },
