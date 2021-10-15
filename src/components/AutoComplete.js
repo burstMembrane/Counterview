@@ -36,7 +36,7 @@ export default function AutoComplete(props) {
       const JSONAddresses = JSON.stringify(addresses);
 
       localStorage.setItem("addresses", JSONAddresses);
-
+      search(input);
       // Search an address
       // setResult(Fetch("address", searchValue))
     }
@@ -58,6 +58,8 @@ export default function AutoComplete(props) {
     }
     setInput(input);
   }
+
+  //   get addresses from localstorage
   useEffect(() => {
     try {
       const lsAdresses = JSON.parse(localStorage.getItem("addresses"));
@@ -77,9 +79,11 @@ export default function AutoComplete(props) {
               i < 10 && (
                 <Dropdown.Item
                   className='w-100'
+                  id={asset.asset}
                   onClick={(e) => {
-                    handleSearch(e.target.innerText);
-
+                    console.log(e.target.id);
+                    handleSearch(e.target.id);
+                    setInput(e.target.id);
                     setShowComplete(false);
                   }}
                   key={i}>
@@ -107,8 +111,9 @@ export default function AutoComplete(props) {
                     style={{ textOverflow: "ellipsis" }}
                     as='div'
                     onClick={(e) => {
+                      console.log(e.target.innerText);
                       handleSearch(e.target.innerText);
-
+                      setInput(e.target.innerText);
                       setShowComplete(false);
                     }}
                     variant='secondary'
