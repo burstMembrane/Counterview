@@ -62,9 +62,9 @@ function CreateCard(props) {
     // Info component
     const cardInfo = (
         <span
-            class="card-info"
+            className="card-info"
         >
-            <span class="fill"></span>
+            <span className="fill"></span>
             <p>INFO</p>
             <p><a href={`https://xchain.io/asset/${props.asset}`} target="_blank">XCHAIN</a></p>
             <p>SUPPLY: {info.supply}</p>
@@ -77,7 +77,7 @@ function CreateCard(props) {
         <span 
             className={className}
             onClick={() => {
-                console.log(props.asset)
+                
             }}
         >
             {toggle.info ? cardInfo : null}
