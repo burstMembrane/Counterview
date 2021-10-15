@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react"
-import { Container, Nav, Navbar, NavDropdown, Form, FormControl, Button } from "react-bootstrap"
+import { Container, Nav, Navbar, Form, FormControl, Button } from "react-bootstrap"
 import Fetch from "./Fetch"
 
 function NavBar(props) {
     const [ input, setInput ] = useState("")    // Search input box value
     const [ result, setResult ] = useState("")  // Fetch results
-    const [ searchType, setSearchType ] = useState("")
 
     // 1. Handles search input
     function handleInput(input) {
@@ -21,16 +20,12 @@ function NavBar(props) {
 
         // If text input is not length of address then search for asset
         if(value.length < 33) {
-            // setResult(Fetch("asset", searchValue))
             const res = await Fetch("asset", value)
             setResult(res)
-            setSearchType("asset")
         } else {
         // Search an address
-            // setResult(Fetch("address", searchValue))
             const res = await Fetch("balances", value)
             setResult(res)
-            setSearchType("address")
         }
     }
 
@@ -40,11 +35,6 @@ function NavBar(props) {
         props.onDataChange(result)
     }, [result])
 
-    useEffect(() => {
-        // Passes search type to parent
-        props.onSearchTypeChange(searchType)
-    }, [searchType])
-
     return (
         <Navbar collapseOnSelect className="navBar" expand="lg"variant="dark">
             <Container>
@@ -53,20 +43,28 @@ function NavBar(props) {
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                     <Nav.Link 
-                        href="https://fapep.github.io/FABRIQUE/counterview.html"
+                        className={props.pepeFilter.original ? "selected-filter" : "nav-link"}
+                        onClick={() => {
+                            props.onFilterChange("original")
+                        }}
+                    >OG Peps</Nav.Link>
+                    <Nav.Link 
+                        className={props.pepeFilter.fake ? "selected-filter" : "nav-link"}
+                        onClick={() => {
+                            props.onFilterChange("fake")
+                        }}
+                    >Fakes</Nav.Link>
+                    <Nav.Link 
+                        href="https://fapep.github.io/FABRIQUE/"
                         target="_blank"
                     >About</Nav.Link>
-                    {/* <NavDropdown title="Donate" id="collasible-nav-dropdown">
-                    <NavDropdown.Item 
-                        href=""
-                        onClick={() => {navigator.clipboard.writeText("1EWFR9dMzM2JtrXeqwVCY1LW6KMZ1iRhJ5")}}
-                    >
-                            <span className="text-wrap">Copy XCP Address</span>
-                        </NavDropdown.Item>
-                    </NavDropdown> */}
                 </Nav>
                 <Form 
+                    id="search-input"
                     className="d-flex"
+                    onClick={(e) => {
+                        // console.log(e.target)
+                    }}
                     onSubmit={(e) => {
                         handleSubmit(e)
                     }}
